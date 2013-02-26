@@ -1,37 +1,48 @@
 Student-Mgt
 ===========
+How to run the Code?
 
 
 Before you run the code ,you must do these following things...
 
 
-1. Install Phpmyadmin and create a database as 'vivek'.
+1.Install Phpmyadmin by reading following blog:-
 
-2. Now create three table as...
+http://blog.sudobits.com/2011/06/19/how-to-install-phpmyadmin-on-ubuntu-11-04-10-10/
 
+2.Now import the database file vivek.sql ,by using this command:-
 
-               1.    Student table :-  Column are   (s_name, s_name2, f_name, f_name2, m_name,      m_name2, trade_sem, rollno, reg_no, address, phne_no, e_mail)
-               2.    Teacher Table :- Column are  (t_name, t_name2, dept, id, quali, sub_name, addr, phno, e_mail)      
-               3.     User table :- Column are (User, Pass)
+mysql -p -u username database_name < vivek.sql
 
+3.After this,you must install Rude CGI Library in your system.
 
-3. After this,you must install cgi in your system.For that you can read my blog:-mrthakur09.wordpress.com
+For that open terminal and run following command
 
+$ sudo apt-get install librudecgi5
 
-4. Now just copy and paste the code.
+4.Install MySql Connector for C++
 
+Follow blog:
 
-5. Save  your file as .cpp file.
+http://mandeepsimak.wordpress.com/2012/12/15/mysql-connector-for-c/
 
-
-6. Open your terminal and run this command:-g++ -o final new.cpp -I /usr/include/mysql -L /usr/include/mysql -lmysqlclient -lrudecgi
-               
-
-               :- Here 'new.cpp' is my file name ,you must put your file name.
-               
-               :-'final' is the name of my .cgi file,you can give any name.
-
-7. Now open your browser and type this command:-   http://localhost/cgi-bin/final
+5.Now download the file ie new.cpp and save it in cgi-bin folder.
 
 
-8. Here your output...
+ 6.Open your terminal and type this command:-
+
+ cd  /usr/lib/cgi-bin/
+
+ g++ -o final new.cpp -I /usr/include/mysql -L /usr/include/mysql -lmysqlclient -lrudecgi
+
+ Now open your browser and type this command:-   http://localhost/cgi-bin/final
+
+               Type username:-vivek
+               password:-pass
+
+
+
+
+
+
+
